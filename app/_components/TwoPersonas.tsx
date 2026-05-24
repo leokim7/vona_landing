@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "./Container";
+import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
 const PERSONAS = [
@@ -27,7 +28,7 @@ export function TwoPersonas() {
   return (
     <section className="bg-white py-24 lg:py-32">
       <Container>
-        <div className="text-center">
+        <Reveal variant="fade-up" className="text-center">
           <SectionLabel className="justify-center">
             TWO PERSONAS · PHASE 1
           </SectionLabel>
@@ -37,12 +38,15 @@ export function TwoPersonas() {
           <p className="mx-auto mt-4 max-w-2xl text-[16px] text-text-2 sm:text-[18px]">
             B2C 친구와 B2B2C 어르신 안부 친구를 동시 출시합니다.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-          {PERSONAS.map((p) => (
-            <article
+          {PERSONAS.map((p, idx) => (
+            <Reveal
               key={p.name}
+              as="article"
+              variant="fade-up"
+              delay={150 + idx * 150}
               className="rounded-lg bg-bg-gray p-8 sm:p-10"
             >
               <div className="relative aspect-[460/575] w-full overflow-hidden rounded-lg">
@@ -51,7 +55,7 @@ export function TwoPersonas() {
                   alt={p.alt}
                   fill
                   sizes="(min-width: 768px) 460px, 100vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
                 />
               </div>
 
@@ -69,18 +73,8 @@ export function TwoPersonas() {
               <blockquote className="mt-3 text-[15px] leading-[1.5] text-text-2">
                 &ldquo;{p.quote}&rdquo;
               </blockquote>
-            </article>
+            </Reveal>
           ))}
-        </div>
-
-        <div className="mt-14 flex items-start gap-4">
-          <span
-            className="mt-1 block h-12 w-1 shrink-0 bg-dark-2"
-            aria-hidden="true"
-          />
-          <p className="text-[16px] font-semibold tracking-[-0.4px] text-text-1 sm:text-[18px]">
-            동일 엔진, 다른 L4 — 단일 페르소나에 베팅하지 않습니다.
-          </p>
         </div>
       </Container>
     </section>

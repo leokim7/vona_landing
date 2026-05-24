@@ -82,6 +82,12 @@ export default function RootLayout({
       lang="ko"
       className={`${inter.variable} ${pretendard.variable} antialiased`}
     >
+      <head>
+        {/* JS-disabled fallback — reveal animations rely on JS, so show content statically */}
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important;transition:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="min-h-screen bg-white text-text-1">
         {children}
         <Analytics />
