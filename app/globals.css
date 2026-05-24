@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #3182f6;
+  --color-coral: #f46a6a;
+  --color-dark: #0f1419;
+  --color-dark-2: #191f28;
+  --color-dark-line: #38404a;
+
+  --color-bg-warm: #faf9f6;
+  --color-bg-gray: #f7f8fa;
+  --color-line: #e5e8eb;
+
+  --color-text-1: #191f28;
+  --color-text-2: #4e5968;
+  --color-text-3: #8b95a1;
+
+  --color-dark-text-1: #f0f2f5;
+  --color-dark-text-2: #a8b0bc;
+  --color-dark-text-3: #6b7684;
+
+  --font-sans: var(--font-inter), var(--font-pretendard), "Pretendard Variable",
+    "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  --container-content: 1200px;
+
+  --animate-rotate-words: rotate-words 8s infinite;
+
+  @keyframes rotate-words {
+    0%, 20% {
+      transform: translateY(0);
+    }
+    25%, 45% {
+      transform: translateY(-100%);
+    }
+    50%, 70% {
+      transform: translateY(-200%);
+    }
+    75%, 95% {
+      transform: translateY(-300%);
+    }
+    100% {
+      transform: translateY(-400%);
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text-1);
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: keep-all;
+  }
+
+  ::selection {
+    background: var(--color-coral);
+    color: #ffffff;
+  }
+}
