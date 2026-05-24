@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 const BodySchema = z.object({
   email: z.string().email("올바른 이메일 주소를 입력해주세요."),
   source: z.enum(["hero", "cta"]).default("hero"),
-  website: z.string().max(0).optional(),
+  website: z.string().optional(),
 });
 
 const NOTIFY_TO =
