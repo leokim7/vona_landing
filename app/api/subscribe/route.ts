@@ -87,7 +87,12 @@ export async function POST(request: NextRequest) {
   ].join("\n");
 
   try {
-    const { error } = await resend.emails.send({
+    console.log("[v0] Attempting to send email with Resend");
+    console.log("[v0] FROM:", FROM);
+    console.log("[v0] TO:", NOTIFY_TO);
+    console.log("[v0] SUBJECT:", subject);
+    
+    const { data, error } = await resend.emails.send({
       from: FROM,
       to: NOTIFY_TO,
       replyTo: email,
@@ -96,19 +101,24 @@ export async function POST(request: NextRequest) {
       text,
     });
 
+    console.log("[v0] Resend response - error:", error);
+    console.log("[v0] Resend response - data:", data);
+
     if (error) {
-      console.error("Resend error:", error);
+      console.error("Resend error details:", JSON.stringify(error));
       return NextResponse.json(
-        { ok: false, message: "메일 발송에 실패했습니다." },
+        { ok: false, message: `메일 발송에 실패했습니다. (${error?.message || 'Unknown error'})` },
         { status: 502 },
       );
     }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Subscribe handler exception:", err);
+    const errMsg = err instanceof Error ? err.message : String(err);
+    console.error("Subscribe handler exception:", errMsg);
+    console.error("Full error:", err);
     return NextResponse.json(
-      { ok: false, message: "서버 오류가 발생했습니다." },
+      { ok: false, message: `서버 오류가 발생했습니다. (${errMsg})` },
       { status: 500 },
     );
   }
