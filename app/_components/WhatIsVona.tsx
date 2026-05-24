@@ -1,22 +1,14 @@
 import Image from "next/image";
 import { Container } from "./Container";
+import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
 export function WhatIsVona() {
   return (
     <section className="bg-white py-24 lg:py-32">
       <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-        <div className="relative aspect-[580/460] w-full overflow-hidden rounded-[4px]">
-          <Image
-            src="/images/what-is-vona.png"
-            alt="카페에서 통화하는 사용자"
-            fill
-            sizes="(min-width: 1024px) 580px, 100vw"
-            className="object-cover"
-          />
-        </div>
-
-        <div>
+        {/* TEXT — first in DOM (mobile shows on top); on lg, ordered to the right */}
+        <Reveal variant="fade-up" className="lg:order-2">
           <SectionLabel>WHAT IS VONA</SectionLabel>
 
           <p className="mt-4 text-[28px] font-normal tracking-[-0.5px] text-text-2 sm:text-[32px] lg:text-[36px]">
@@ -64,7 +56,21 @@ export function WhatIsVona() {
               </dd>
             </div>
           </dl>
-        </div>
+        </Reveal>
+
+        {/* IMAGE — second in DOM (mobile shows below text); on lg, ordered to the left */}
+        <Reveal
+          variant="from-left"
+          className="relative aspect-[580/460] w-full overflow-hidden rounded-[4px] lg:order-1"
+        >
+          <Image
+            src="/images/what-is-vona.png"
+            alt="카페에서 통화하는 사용자"
+            fill
+            sizes="(min-width: 1024px) 580px, 100vw"
+            className="object-cover"
+          />
+        </Reveal>
       </Container>
     </section>
   );

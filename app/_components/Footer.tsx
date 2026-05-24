@@ -29,12 +29,12 @@ export function Footer() {
             </div>
 
             <div className="sm:text-right">
-              <p className="text-[13px] font-bold uppercase tracking-[1px] text-dark-text-1">
+              <p className="text-[10px] font-bold uppercase tracking-[1px] text-dark-text-1">
                 CONTACT
               </p>
               <a
                 href="mailto:info@vona.kr"
-                className="mt-2 inline-block text-[16px] font-semibold tracking-[-0.3px] text-dark-text-1 hover:text-coral"
+                className="mt-2 inline-block text-[13px] font-semibold tracking-[-0.3px] text-dark-text-1 hover:text-coral"
               >
                 info@vona.kr
               </a>

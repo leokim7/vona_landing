@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "./Container";
 import { EmailForm } from "./EmailForm";
+import { Reveal } from "./Reveal";
 
 export function CTA() {
   return (
@@ -22,26 +23,34 @@ export function CTA() {
 
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-coral">
-            사전 신청 OPEN
-          </p>
-          <h2 className="mt-6 text-[36px] font-bold leading-[1.15] tracking-[-1.5px] text-dark-text-1 sm:text-[44px] lg:text-[56px] lg:tracking-[-2px]">
-            벨이 울리는 순간을
-            <br className="sm:hidden" /> 함께해주세요.
-          </h2>
-          <p className="mt-5 text-[16px] text-dark-text-2 sm:text-[18px] lg:text-[20px]">
-            Phase 1 클로즈드 베타 — 선착순 100명.
-          </p>
+          <Reveal variant="fade-up">
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-coral">
+              사전 신청 OPEN
+            </p>
+          </Reveal>
+          <Reveal variant="fade-up" delay={100}>
+            <h2 className="mt-6 text-[36px] font-bold leading-[1.15] tracking-[-1.5px] text-dark-text-1 sm:text-[44px] lg:text-[56px] lg:tracking-[-2px]">
+              벨이 울리는 순간을
+              <br className="sm:hidden" /> 함께해주세요.
+            </h2>
+          </Reveal>
+          <Reveal variant="fade-up" delay={200}>
+            <p className="mt-5 text-[16px] text-dark-text-2 sm:text-[18px] lg:text-[20px]">
+              Phase 1 클로즈드 베타 — 선착순 100명.
+            </p>
+          </Reveal>
 
-          <div className="mt-10 w-full">
+          <Reveal variant="fade-up" delay={350} className="mt-10 w-full">
             <div className="mx-auto w-full max-w-[540px]">
               <EmailForm variant="cta" source="cta" />
             </div>
-          </div>
+          </Reveal>
 
-          <p className="mt-8 text-[13px] text-dark-text-2">
-            베타 사용자에게는 평생 50% 할인 혜택을 제공합니다.
-          </p>
+          <Reveal variant="fade" delay={500}>
+            <p className="mt-8 text-[13px] text-dark-text-2">
+              베타 사용자에게는 평생 50% 할인 혜택을 제공합니다.
+            </p>
+          </Reveal>
         </div>
       </Container>
     </section>

@@ -1,4 +1,5 @@
 import { Container } from "./Container";
+import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
 const STEPS = [
@@ -23,19 +24,23 @@ export function ThreeSteps() {
   return (
     <section className="bg-bg-gray py-24 lg:py-32">
       <Container>
-        <SectionLabel>HOW IT WORKS</SectionLabel>
-
-        <h2 className="mt-4 text-[36px] font-bold tracking-[-1.5px] text-text-1 sm:text-[42px] lg:text-[48px] lg:tracking-[-2px]">
-          3단계로 시작합니다.
-        </h2>
-        <p className="mt-4 text-[16px] text-text-2 sm:text-[18px]">
-          복잡한 설정 없이, 단 몇 분 만에.
-        </p>
+        <Reveal variant="fade-up">
+          <SectionLabel>HOW IT WORKS</SectionLabel>
+          <h2 className="mt-4 text-[36px] font-bold tracking-[-1.5px] text-text-1 sm:text-[42px] lg:text-[48px] lg:tracking-[-2px]">
+            3단계로 시작합니다.
+          </h2>
+          <p className="mt-4 text-[16px] text-text-2 sm:text-[18px]">
+            복잡한 설정 없이, 단 몇 분 만에.
+          </p>
+        </Reveal>
 
         <ol className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {STEPS.map((step) => (
-            <li
+          {STEPS.map((step, idx) => (
+            <Reveal
               key={step.number}
+              as="li"
+              variant="fade-up"
+              delay={150 + idx * 120}
               className="relative overflow-hidden rounded-lg bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
             >
               <span
@@ -51,7 +56,7 @@ export function ThreeSteps() {
               <p className="mt-3 text-[14px] leading-[1.6] text-text-2">
                 {step.body}
               </p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </Container>
