@@ -49,9 +49,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Vona",
+        width: 1672,
+        height: 941,
+        alt: "Vona — AI Voice 친구가 전화로 찾아옵니다",
+        type: "image/png",
       },
     ],
   },
@@ -59,7 +60,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vona — AI Voice 친구가 전화로 찾아옵니다",
     description: "벨이 울리면 받으세요.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "/og-image.png",
+        alt: "Vona — AI Voice 친구가 전화로 찾아옵니다",
+      },
+    ],
   },
   robots: {
     index: true,
