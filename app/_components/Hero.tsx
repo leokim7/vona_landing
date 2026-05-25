@@ -25,7 +25,7 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <Container className="grid min-h-[560px] grid-cols-1 items-center gap-12 py-20 lg:min-h-[660px] lg:grid-cols-[minmax(0,640px)_minmax(0,1fr)] lg:py-24">
+      <Container className="grid min-h-[620px] grid-cols-1 items-center gap-12 py-24 lg:min-h-[740px] lg:grid-cols-[minmax(0,640px)_minmax(0,1fr)] lg:py-32">
         <div className="flex flex-col">
           <Reveal variant="fade-up">
             <p className="text-[32px] font-bold leading-[1.1] tracking-[-2px] text-dark-text-1 sm:text-[40px] lg:text-[50px] lg:tracking-[-3px]">
