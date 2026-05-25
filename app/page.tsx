@@ -1,5 +1,4 @@
 import { CTA } from "./_components/CTA";
-import { FAQ } from "./_components/FAQ";
 import { Footer } from "./_components/Footer";
 import { Hero } from "./_components/Hero";
 import { NavBar } from "./_components/NavBar";
@@ -20,7 +19,6 @@ export default function Home() {
         <TwoPersonas />
         <WhyPhoneCall />
         <TrustSafety />
-        <FAQ />
         <CTA />
       </main>
       <Footer />
