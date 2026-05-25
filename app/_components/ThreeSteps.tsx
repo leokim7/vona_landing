@@ -40,26 +40,22 @@ export function ThreeSteps() {
               key={step.number}
               as="li"
               variant="fade-up"
-              delay={200 + idx * 200}
+              delay={150 + idx * 120}
+              className="relative overflow-hidden rounded-lg bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
             >
-              {/* inner card wrapper carries hover transform so it doesn't fight Reveal's entry transform */}
-              <div
-                className="group relative h-full cursor-default overflow-hidden rounded-lg bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-[transform,box-shadow] duration-300 ease-out will-change-transform hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(15,20,25,0.10)] motion-reduce:transition-none motion-reduce:hover:scale-100"
-              >
-                <span
-                  className="absolute inset-y-0 left-0 w-1 bg-dark-2 transition-colors duration-300 group-hover:bg-coral"
-                  aria-hidden="true"
-                />
-                <p className="text-[32px] font-bold tracking-[-1px] text-coral transition-transform duration-300 group-hover:scale-110">
-                  {step.number}
-                </p>
-                <h3 className="mt-3 text-[22px] font-bold tracking-[-0.5px] text-text-1 sm:text-[24px]">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-[14px] leading-[1.6] text-text-2">
-                  {step.body}
-                </p>
-              </div>
+              <span
+                className="absolute inset-y-0 left-0 w-1 bg-dark-2"
+                aria-hidden="true"
+              />
+              <p className="text-[32px] font-bold tracking-[-1px] text-coral">
+                {step.number}
+              </p>
+              <h3 className="mt-3 text-[22px] font-bold tracking-[-0.5px] text-text-1 sm:text-[24px]">
+                {step.title}
+              </h3>
+              <p className="mt-3 text-[14px] leading-[1.6] text-text-2">
+                {step.body}
+              </p>
             </Reveal>
           ))}
         </ol>

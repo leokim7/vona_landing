@@ -48,11 +48,10 @@ export const metadata: Metadata = {
       "벨이 울리면 받으세요. AI 페르소나에게 전화번호를 부여한 AI 음성 컴패니언.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1672,
-        height: 941,
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
         alt: "Vona — AI Voice 친구가 전화로 찾아옵니다",
-        type: "image/png",
       },
     ],
   },
@@ -60,12 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vona — AI Voice 친구가 전화로 찾아옵니다",
     description: "벨이 울리면 받으세요.",
-    images: [
-      {
-        url: "/og-image.png",
-        alt: "Vona — AI Voice 친구가 전화로 찾아옵니다",
-      },
-    ],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
